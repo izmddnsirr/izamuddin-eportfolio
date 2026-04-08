@@ -19,17 +19,17 @@ export default function Certifications() {
           </h2>
         </div>
 
-        <div className="relative space-y-4 pl-14 before:absolute before:top-2 before:bottom-2 before:left-5 before:w-px before:bg-border">
+        <div className="relative space-y-4 pl-10 sm:pl-14 before:absolute before:top-2 before:bottom-2 before:left-5 before:w-px before:bg-border">
           <div className="absolute top-1/2 left-5 -translate-x-1/2 -translate-y-1/2 z-10 flex size-10 items-center justify-center rounded-full bg-linear-to-br from-blue-500 to-cyan-500 shadow-lg shadow-blue-500/30">
             <BadgeCheck className="size-4 text-white" />
           </div>
           {portfolioData.certifications.map((cert) => (
             <Card key={cert.name} className="relative">
               <span className="absolute top-6 -left-[1.07rem] size-3 rounded-full border bg-background" />
-              <CardContent className="flex flex-wrap items-center justify-between gap-4 px-5 py-3">
+              <CardContent className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 px-5 py-3">
                 <div className="flex items-center gap-4">
                   {cert.issuerLogo && (
-                    <div className="flex h-15 w-15 shrink-0 items-center justify-center">
+                    <div className="flex h-12 w-12 sm:h-15 sm:w-15 shrink-0 items-center justify-center">
                       <Image
                         src={`https://thesvg.org/icons/${cert.issuerLogo}/default.svg`}
                         alt={cert.issuer}

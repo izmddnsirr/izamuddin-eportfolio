@@ -18,17 +18,17 @@ export default function Education() {
           </h2>
         </div>
 
-        <div className="relative space-y-4 pl-14 before:absolute before:top-2 before:bottom-2 before:left-5 before:w-px before:bg-border">
+        <div className="relative space-y-4 pl-10 sm:pl-14 before:absolute before:top-2 before:bottom-2 before:left-5 before:w-px before:bg-border">
           <div className="absolute top-1/2 left-5 -translate-x-1/2 -translate-y-1/2 z-10 flex size-10 items-center justify-center rounded-full bg-linear-to-br from-violet-500 to-purple-600 shadow-lg shadow-purple-500/30">
             <GraduationCap className="size-4 text-white" />
           </div>
           {portfolioData.education.map((item) => (
             <Card key={`${item.institution}-${item.degree}`} className="relative">
               <span className="absolute top-6 -left-[1.07rem] size-3 rounded-full border bg-background" />
-              <CardContent className="flex flex-wrap items-center justify-between gap-4 px-5 py-3">
+              <CardContent className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 px-5 py-3">
                 <div className="flex items-center gap-4">
-                  <div className="flex w-15 shrink-0 items-center justify-center">
-                    <Image src="/uthm.png" alt="UTHM" width={60} height={60} className="object-contain" style={{ width: 60, height: 60 }} />
+                  <div className="flex w-12 sm:w-15 shrink-0 items-center justify-center">
+                    <Image src="/uthm.png" alt="UTHM" width={60} height={60} className="object-contain w-10 h-10 sm:w-15 sm:h-15" />
                   </div>
                   <div className="w-px self-stretch bg-border" />
                   <div>

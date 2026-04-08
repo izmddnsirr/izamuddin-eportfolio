@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 import ThemeToggle from "@/components/ThemeToggle";
@@ -22,6 +23,11 @@ export default function Navbar() {
     portfolioData.nav[0]?.id ?? "hero",
   );
 
+  const { scrollY } = useScroll();
+
+  const headerBgOpacity = useTransform(scrollY, [0, 80], [0, 1]);
+  const pillOpacity = useTransform(scrollY, [0, 80], [1, 0]);
+
   React.useEffect(() => {
     if (window.location.hash) {
       history.replaceState(null, "", window.location.pathname);
@@ -30,11 +36,11 @@ export default function Navbar() {
     const ids = portfolioData.nav.map((item) => item.id);
 
     function onScroll() {
-      const scrollY = window.scrollY + 100;
+      const scrollYVal = window.scrollY + 100;
       let current = ids[0];
       for (const id of ids) {
         const el = document.getElementById(id);
-        if (el && el.offsetTop <= scrollY) current = id;
+        if (el && el.offsetTop <= scrollYVal) current = id;
       }
       setActive(current);
     }
@@ -45,8 +51,12 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-white/10 backdrop-blur-md backdrop-saturate-150">
-      <div className="mx-auto flex w-full max-w-6xl items-center px-4 py-3 sm:px-6">
+    <header className="fixed inset-x-0 top-0 z-50">
+      <motion.div
+        style={{ opacity: headerBgOpacity }}
+        className="absolute inset-0 -z-10 border-b border-white/10 bg-white/10 backdrop-blur-md backdrop-saturate-150"
+      />
+      <div className="relative mx-auto flex w-full max-w-6xl items-center px-4 py-3 sm:px-6">
         <button
           onClick={() => scrollToSection("hero")}
           className="text-lg font-semibold tracking-tight"
@@ -54,16 +64,26 @@ export default function Navbar() {
           Portfolio
         </button>
 
-        <div className="hidden flex-1 items-center justify-center gap-1 md:flex">
-          {portfolioData.nav.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollToSection(item.id)}
-              className={`px-3 py-2 text-sm transition-colors duration-200 hover:text-foreground ${active === item.id ? "text-foreground font-medium" : "text-muted-foreground"}`}
-            >
-              {item.label}
-            </button>
-          ))}
+        <div className="hidden flex-1 items-center justify-center md:flex">
+          <div className="relative flex items-center gap-1 px-2 py-1">
+            <motion.div
+              style={{ opacity: pillOpacity }}
+              className="absolute inset-0 rounded-full bg-white/10 ring-1 ring-white/10 backdrop-blur-md backdrop-saturate-150"
+            />
+            {portfolioData.nav.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`relative px-3 py-1.5 text-sm transition-colors duration-300 ${
+                  active === item.id
+                    ? "text-foreground font-semibold"
+                    : "text-foreground/60 hover:text-foreground"
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="hidden md:flex">

@@ -417,6 +417,12 @@
 
 @media (max-width: 480px) {
   .pc-card {
+    height: 360px;
+  }
+}
+
+@media (max-width: 375px) {
+  .pc-card {
     height: 340px;
   }
 

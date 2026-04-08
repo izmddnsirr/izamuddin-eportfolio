@@ -69,7 +69,7 @@ export default function Hero() {
         <h1 className="mx-auto max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
           {portfolioData.hero.fullName}
         </h1>
-        <p className="text-lg text-muted-foreground whitespace-nowrap sm:text-xl" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace' }}>
+        <p className="text-lg text-muted-foreground whitespace-normal sm:whitespace-nowrap sm:text-xl" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace' }}>
           Building scalable, user-centric <strong className="text-foreground">web</strong> and <strong className="text-foreground">mobile</strong> applications.
         </p>
         <p className="mx-auto max-w-2xl leading-relaxed text-muted-foreground">

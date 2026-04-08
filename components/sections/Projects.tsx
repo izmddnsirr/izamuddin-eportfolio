@@ -32,7 +32,7 @@ function ProjectPreview({ title, image, year, priority }: { title: string; image
   const [hasError, setHasError] = React.useState(false);
 
   return (
-    <div className="relative h-44 w-full overflow-hidden border-b bg-linear-to-br from-muted/70 via-muted/30 to-background">
+    <div className="relative h-32 sm:h-44 w-full overflow-hidden border-b bg-linear-to-br from-muted/70 via-muted/30 to-background">
       <div className="absolute inset-0 grid place-items-center">
         <span className="rounded-full border border-foreground/10 bg-background/80 px-3 py-1 text-[11px] font-semibold tracking-[0.16em] text-muted-foreground uppercase backdrop-blur-sm">
           {title}
@@ -121,7 +121,7 @@ export default function Projects() {
               <ProjectPreview title={project.title} image={project.image} year={project.year} priority={visibleItems.indexOf(project) < 2} />
               <CardHeader className="space-y-3">
                 <div className="flex items-center justify-between gap-2">
-                  <CardTitle className="text-xl">{project.title}</CardTitle>
+                  <CardTitle className="text-lg sm:text-xl">{project.title}</CardTitle>
                   <div className="flex flex-wrap items-center justify-end gap-1">
                     {(project.categories && project.categories.length > 0
                       ? project.categories
