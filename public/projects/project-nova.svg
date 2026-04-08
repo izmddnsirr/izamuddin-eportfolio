@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Project Nova preview">
+  <defs>
+    <linearGradient id="n" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1d4ed8" />
+      <stop offset="100%" stop-color="#0f766e" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#n)" />
+  <rect x="450" y="80" width="300" height="520" rx="40" fill="#f8fafc" />
+  <circle cx="600" cy="145" r="20" fill="#cbd5e1" />
+  <rect x="500" y="200" width="200" height="22" rx="8" fill="#e2e8f0" />
+  <rect x="500" y="240" width="160" height="22" rx="8" fill="#e2e8f0" />
+  <rect x="500" y="290" width="200" height="120" rx="14" fill="#bfdbfe" />
+  <rect x="500" y="430" width="200" height="70" rx="12" fill="#99f6e4" />
+</svg>

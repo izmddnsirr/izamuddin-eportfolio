@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Wellside+ preview">
+  <defs>
+    <linearGradient id="a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e3a5f" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#a)" />
+  <!-- Phone mockup -->
+  <rect x="420" y="80" width="200" height="360" rx="24" fill="#1e293b" />
+  <rect x="430" y="100" width="180" height="320" rx="16" fill="#0f172a" />
+  <rect x="450" y="120" width="140" height="20" rx="4" fill="#38bdf8" />
+  <rect x="450" y="155" width="100" height="12" rx="3" fill="#475569" />
+  <rect x="450" y="180" width="140" height="60" rx="8" fill="#1e3a5f" />
+  <rect x="450" y="255" width="140" height="60" rx="8" fill="#1e3a5f" />
+  <rect x="450" y="330" width="140" height="60" rx="8" fill="#1e3a5f" />
+  <!-- Web mockup -->
+  <rect x="660" y="100" width="460" height="320" rx="12" fill="#f8fafc" opacity="0.95" />
+  <rect x="680" y="120" width="200" height="20" rx="4" fill="#cbd5e1" />
+  <rect x="680" y="155" width="420" height="12" rx="3" fill="#e2e8f0" />
+  <rect x="680" y="180" width="420" height="120" rx="8" fill="#dbeafe" />
+  <rect x="680" y="315" width="200" height="12" rx="3" fill="#e2e8f0" />
+  <rect x="680" y="340" width="140" height="12" rx="3" fill="#e2e8f0" />
+  <!-- Label -->
+  <text x="100" y="480" font-family="sans-serif" font-size="32" font-weight="bold" fill="#f8fafc">Wellside+</text>
+  <text x="100" y="520" font-family="sans-serif" font-size="18" fill="#94a3b8">Barbershop Booking System</text>
+</svg>
