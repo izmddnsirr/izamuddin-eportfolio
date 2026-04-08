@@ -8,7 +8,10 @@ type SectionRevealProps = {
   className?: string;
 };
 
-export default function SectionReveal({ children, className }: SectionRevealProps) {
+export default function SectionReveal({
+  children,
+  className,
+}: SectionRevealProps) {
   return (
     <motion.div
       className={className}

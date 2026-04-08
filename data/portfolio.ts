@@ -170,7 +170,8 @@ export const portfolioData = {
         "An IoT smart window system with Arduino hardware, Flutter mobile app, and Firebase real-time database.",
       techStack: ["Flutter", "Firebase", "Arduino", "IoT"],
       githubUrl: "https://github.com/izamuddinnasir/windowsense",
-      liveUrl: "https://publisher.uthm.edu.my/periodicals/index.php/mari/article/view/12429",
+      liveUrl:
+        "https://publisher.uthm.edu.my/periodicals/index.php/mari/article/view/12429",
     },
     {
       title: "TaskFlow Lite (Dummy)",

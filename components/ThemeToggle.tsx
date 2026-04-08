@@ -15,7 +15,9 @@ export default function ThemeToggle() {
   }, []);
 
   if (!mounted) {
-    return <Button aria-label="Toggle theme" variant="ghost" size="icon" disabled />;
+    return (
+      <Button aria-label="Toggle theme" variant="ghost" size="icon" disabled />
+    );
   }
 
   const isDark = resolvedTheme === "dark";

@@ -51,11 +51,16 @@ export default function RootLayout({
       className={`${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-background text-foreground">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <div className="flex min-h-screen flex-col">
-          <Navbar />
-          <div className="flex-1">{children}</div>
-          <Footer />
+            <Navbar />
+            <div className="flex-1">{children}</div>
+            <Footer />
           </div>
         </ThemeProvider>
       </body>
