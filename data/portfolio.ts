@@ -50,6 +50,7 @@ export type ExperienceItem = {
   company: string;
   role: string;
   duration: string;
+  durationLength?: string;
   responsibilities: string[];
 };
 
@@ -189,6 +190,7 @@ export const portfolioData = {
       company: "Zafran Resources Sdn. Bhd.",
       role: "Frontend Developer Intern",
       duration: "Jul 2023 – Jan 2024",
+      durationLength: "6 months",
       responsibilities: [
         "Led a team of 3 IT interns as Team Leader, coordinating task delegation and ensuring on-time delivery of project milestones.",
         "Contributed as Frontend Developer for the Death Benefit (Khairat Kematian) Management System (Web).",

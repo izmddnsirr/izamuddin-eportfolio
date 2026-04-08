@@ -84,6 +84,7 @@ const GlassSurface = ({
     });
 
     gaussianBlurRef.current?.setAttribute('stdDeviation', displace.toString());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     width,
     height,
@@ -114,6 +115,7 @@ const GlassSurface = ({
     return () => {
       resizeObserver.disconnect();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -128,15 +130,13 @@ const GlassSurface = ({
     return () => {
       resizeObserver.disconnect();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     setTimeout(updateDisplacementMap, 0);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [width, height]);
-
-  useEffect(() => {
-    setSvgSupported(supportsSVGFilters());
-  }, []);
 
   const supportsSVGFilters = () => {
     if (typeof window === 'undefined' || typeof document === 'undefined') {
@@ -155,6 +155,11 @@ const GlassSurface = ({
 
     return div.style.backdropFilter !== '';
   };
+
+  useEffect(() => {
+    setSvgSupported(supportsSVGFilters());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const containerStyle = {
     ...style,

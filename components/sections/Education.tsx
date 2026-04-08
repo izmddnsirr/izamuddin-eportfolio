@@ -1,6 +1,9 @@
 import SectionReveal from "@/components/SectionReveal";
+import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { portfolioData } from "@/data/portfolio";
+import Image from "next/image";
+import { GraduationCap } from "lucide-react";
 
 export default function Education() {
   return (
@@ -15,15 +18,28 @@ export default function Education() {
           </h2>
         </div>
 
-        <div className="grid gap-4">
+        <div className="relative space-y-4 pl-14 before:absolute before:top-2 before:bottom-2 before:left-5 before:w-px before:bg-border">
+          <div className="absolute top-1/2 left-5 -translate-x-1/2 -translate-y-1/2 z-10 flex size-10 items-center justify-center rounded-full bg-linear-to-br from-violet-500 to-purple-600 shadow-lg shadow-purple-500/30">
+            <GraduationCap className="size-4 text-white" />
+          </div>
           {portfolioData.education.map((item) => (
-            <Card key={`${item.institution}-${item.degree}`}>
-              <CardContent className="flex flex-wrap items-start justify-between gap-4 p-5">
-                <div>
-                  <h3 className="text-lg font-semibold">{item.degree}</h3>
-                  <p className="text-muted-foreground">{item.institution}</p>
+            <Card key={`${item.institution}-${item.degree}`} className="relative">
+              <span className="absolute top-6 -left-[1.07rem] size-3 rounded-full border bg-background" />
+              <CardContent className="flex flex-wrap items-center justify-between gap-4 px-5 py-3">
+                <div className="flex items-center gap-4">
+                  <Image src="/uthm.png" alt="UTHM" width={60} height={60} className="shrink-0 object-contain" />
+                  <div className="w-px self-stretch bg-border" />
+                  <div>
+                    <h3 className="text-lg font-semibold">{item.degree}</h3>
+                    <p className="text-sm text-muted-foreground">{item.institution}</p>
+                  </div>
                 </div>
-                <p className="text-sm text-muted-foreground">{item.year}</p>
+                <div className="shrink-0 flex flex-col items-end gap-1.5">
+                  <p className="text-sm text-muted-foreground">{item.year.split(" | ")[0]}</p>
+                  {item.year.split(" | ")[1] && (
+                    <Badge variant="secondary">{item.year.split(" | ")[1]}</Badge>
+                  )}
+                </div>
               </CardContent>
             </Card>
           ))}
