@@ -131,27 +131,7 @@
 }
 
 @layer components {
-  .about-profile-card {
-    width: 220px;
-  }
-
-  .about-profile-card .pc-card {
-    height: 18rem;
-    max-height: 18rem;
-  }
-
   .about-profile-card .pc-user-info {
     display: none;
-  }
-
-  @media (max-width: 767px) {
-    .about-profile-card {
-      width: 200px;
-    }
-
-    .about-profile-card .pc-card {
-      height: 16rem;
-      max-height: 16rem;
-    }
   }
 }
