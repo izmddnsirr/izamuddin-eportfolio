@@ -34,7 +34,9 @@ export default function Experience() {
                   <div className="flex items-center gap-4">
                     {companyLogos[job.company] && (
                       <>
-                        <Image src={companyLogos[job.company]} alt={job.company} width={60} height={60} className="shrink-0 object-contain" />
+                        <div className="flex w-15 shrink-0 items-center justify-center">
+                          <Image src={companyLogos[job.company]} alt={job.company} width={60} height={60} className="object-contain" style={{ width: 60, height: 60 }} />
+                        </div>
                         <div className="w-px self-stretch bg-border" />
                       </>
                     )}

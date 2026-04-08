@@ -60,6 +60,21 @@ export type EducationItem = {
   year: string;
 };
 
+export type CertificationItem = {
+  name: string;
+  issuer: string;
+  issuerLogo?: string;
+  logoSize?: number;
+  date: string;
+  status?: "In Progress" | "Completed";
+};
+
+export type AchievementItem = {
+  title: string;
+  description: string;
+  year: number;
+};
+
 export type SocialLink = {
   label: string;
   href: string;
@@ -89,7 +104,7 @@ export const portfolioData = {
   ] satisfies NavItem[],
   hero: {
     fullName: "Muhamad Izamuddin",
-    role: "Software Engineering Student",
+    role: "Software Engineer",
     tagline: "Building scalable, user-centric web and mobile applications.",
     summary:
       "Hands-on experience in full-stack development using Next.js, React Native, and Supabase. Bronze Medalist at MIIX 2024. Seeking internship from August 2026.",
@@ -147,7 +162,7 @@ export const portfolioData = {
       description:
         "A mobile booking and web-based management system for Wellside Barbershop, covering appointments, services, inventory, and transactions.",
       techStack: ["Next.js", "Expo", "React Native", "Supabase"],
-      githubUrl: "https://github.com/izamuddinnasir/wellside",
+      githubUrl: "https://github.com/izmddnsirr/wellside-app",
       liveUrl: "https://wellside.xyz",
     },
     {
@@ -158,8 +173,8 @@ export const portfolioData = {
       description:
         "A personal ePortfolio website showcasing projects, skills, and experience. Built with Next.js App Router, Tailwind CSS, and shadcn/ui with dark mode support.",
       techStack: ["Next.js", "Tailwind CSS", "shadcn/ui", "TypeScript"],
-      githubUrl: "https://github.com/izamuddinnasir/izamuddin-eportfolio",
-      liveUrl: "",
+      githubUrl: "https://github.com/izmddnsirr/izamuddin-eportfolio",
+      liveUrl: "https://main.d24q22mpnmov8d.amplifyapp.com/",
     },
     {
       title: "WindowSense",
@@ -170,7 +185,7 @@ export const portfolioData = {
       description:
         "An IoT smart window system with Arduino hardware, Flutter mobile app, and Firebase real-time database.",
       techStack: ["Flutter", "Firebase", "Arduino", "IoT"],
-      githubUrl: "https://github.com/izamuddinnasir/windowsense",
+      githubUrl: "https://github.com/izmddnsirr/windowsense",
       liveUrl:
         "https://publisher.uthm.edu.my/periodicals/index.php/mari/article/view/12429",
     },
@@ -181,7 +196,7 @@ export const portfolioData = {
       description:
         "A lightweight productivity app concept for tracking daily tasks, reminders, and focus sessions with a clean mobile-first experience.",
       techStack: ["React Native", "Expo", "TypeScript"],
-      githubUrl: "https://github.com/izamuddinnasir/taskflow-lite",
+      githubUrl: "https://github.com/izmddnsirr/taskflow-lite",
       liveUrl: "",
     },
   ] satisfies ProjectItem[],
@@ -213,10 +228,34 @@ export const portfolioData = {
       year: "Aug 2021 – Jan 2024 | CGPA: 3.29",
     },
   ] satisfies EducationItem[],
+  certifications: [
+    {
+      name: "Google IT Automation Professional Certificate",
+      issuer: "Coursera",
+      issuerLogo: "google",
+      logoSize: 36,
+      date: "Mar 2026",
+      status: "In Progress",
+    },
+    {
+      name: "CompTIA Data+",
+      issuer: "Yayasan Peneraju",
+      issuerLogo: "comptia",
+      date: "Feb 2026",
+      status: "In Progress",
+    },
+  ] satisfies CertificationItem[],
+  achievements: [
+    {
+      title: "Bronze Medalist – Malaysia Invention & Innovation Expo (MIIX) 2024",
+      description: "Awarded Bronze Medal (Intermediate Innovator) for \"WindowSense: A Smart Convenience Window\"",
+      year: 2024,
+    },
+  ] satisfies AchievementItem[],
   contact: {
     email: "izamuddinasir@gmail.com",
     socials: [
-      { label: "GitHub", href: "https://github.com/izamuddinnasir" },
+      { label: "GitHub", href: "https://github.com/izmddnsirr" },
       { label: "LinkedIn", href: "https://www.linkedin.com/in/izamuddinnasir" },
       { label: "Email", href: "mailto:izamuddinasir@gmail.com" },
       { label: "Threads", href: "https://www.threads.net/@izamuddinnasir" },

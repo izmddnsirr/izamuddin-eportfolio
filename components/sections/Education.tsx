@@ -27,7 +27,9 @@ export default function Education() {
               <span className="absolute top-6 -left-[1.07rem] size-3 rounded-full border bg-background" />
               <CardContent className="flex flex-wrap items-center justify-between gap-4 px-5 py-3">
                 <div className="flex items-center gap-4">
-                  <Image src="/uthm.png" alt="UTHM" width={60} height={60} className="shrink-0 object-contain" />
+                  <div className="flex w-15 shrink-0 items-center justify-center">
+                    <Image src="/uthm.png" alt="UTHM" width={60} height={60} className="object-contain" style={{ width: 60, height: 60 }} />
+                  </div>
                   <div className="w-px self-stretch bg-border" />
                   <div>
                     <h3 className="text-lg font-semibold">{item.degree}</h3>

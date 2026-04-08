@@ -28,7 +28,7 @@ const categories = [
   ),
 ] as const;
 
-function ProjectPreview({ title, image, year }: { title: string; image: string; year?: number }) {
+function ProjectPreview({ title, image, year, priority }: { title: string; image: string; year?: number; priority?: boolean }) {
   const [hasError, setHasError] = React.useState(false);
 
   return (
@@ -50,6 +50,7 @@ function ProjectPreview({ title, image, year }: { title: string; image: string; 
           alt={`${title} screenshot`}
           fill
           unoptimized={image.endsWith(".svg")}
+          priority={priority}
           onError={() => setHasError(true)}
           className="object-cover transition-transform duration-500 group-hover/card:scale-[1.02]"
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -66,14 +67,16 @@ export default function Projects() {
     React.useState<(typeof categories)[number]>("All");
   const [showAll, setShowAll] = React.useState(false);
 
-  const items = portfolioData.projects.filter((project) => {
-    if (activeCategory === "All") return true;
-    const projectCategories =
-      project.categories && project.categories.length > 0
-        ? project.categories
-        : [project.category];
-    return projectCategories.includes(activeCategory);
-  });
+  const items = portfolioData.projects
+    .filter((project) => {
+      if (activeCategory === "All") return true;
+      const projectCategories =
+        project.categories && project.categories.length > 0
+          ? project.categories
+          : [project.category];
+      return projectCategories.includes(activeCategory);
+    })
+    .sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
   const visibleItems = showAll ? items : items.slice(0, 3);
   const canToggleView = items.length > 3;
 
@@ -115,7 +118,7 @@ export default function Projects() {
               key={project.title}
               className="overflow-hidden border border-border/70 pt-0 transition-all hover:-translate-y-0.5 hover:shadow-md"
             >
-              <ProjectPreview title={project.title} image={project.image} year={project.year} />
+              <ProjectPreview title={project.title} image={project.image} year={project.year} priority={visibleItems.indexOf(project) < 2} />
               <CardHeader className="space-y-3">
                 <div className="flex items-center justify-between gap-2">
                   <CardTitle className="text-xl">{project.title}</CardTitle>

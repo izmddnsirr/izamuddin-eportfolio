@@ -1,54 +1,39 @@
 "use client";
 
-import * as React from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
+import Image from "next/image";
 
 import SectionReveal from "@/components/SectionReveal";
-import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { portfolioData } from "@/data/portfolio";
 
-const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters."),
-  email: z.string().email("Please enter a valid email address."),
-  message: z.string().min(10, "Message must be at least 10 characters."),
-});
+const BASE = "https://thesvg.org/icons";
 
-type ContactFormValues = z.infer<typeof contactSchema>;
+const socialConfig: Record<string, { icon: React.ReactNode; color: string; isImage?: boolean }> = {
+  GitHub: {
+    icon: <Image src={`${BASE}/github/default.svg`} alt="GitHub" width={16} height={16} style={{ width: 16, height: 16 }} className="brightness-0 dark:invert" unoptimized />,
+    color: "#24292e",
+    isImage: true,
+  },
+  LinkedIn: {
+    icon: <Image src={`${BASE}/linkedin/default.svg`} alt="LinkedIn" width={16} height={16} style={{ width: 16, height: 16 }} unoptimized />,
+    color: "#0A66C2",
+    isImage: true,
+  },
+  Email: {
+    icon: <Image src={`${BASE}/gmail/default.svg`} alt="Gmail" width={16} height={16} style={{ width: 16, height: 16 }} unoptimized />,
+    color: "#EA4335",
+    isImage: true,
+  },
+  Threads: {
+    icon: <Image src={`${BASE}/threads/default.svg`} alt="Threads" width={16} height={16} style={{ width: 16, height: 16 }} className="brightness-0 dark:invert" unoptimized />,
+    color: "#000000",
+    isImage: true,
+  },
+};
 
 export default function Contact() {
-  const [submitted, setSubmitted] = React.useState(false);
-
-  const form = useForm<ContactFormValues>({
-    resolver: zodResolver(contactSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      message: "",
-    },
-  });
-
-  function onSubmit(values: ContactFormValues) {
-    console.info("Contact form submitted", values);
-    setSubmitted(true);
-    form.reset();
-  }
-
   return (
     <section id="contact" className="scroll-mt-24 py-16 sm:py-20">
-      <SectionReveal className="grid gap-8 lg:grid-cols-2">
+      <SectionReveal className="flex justify-center">
         <div className="space-y-4 text-center">
           <p className="text-sm font-medium tracking-[0.18em] text-muted-foreground uppercase">
             Contact
@@ -61,89 +46,41 @@ export default function Contact() {
             through the form or connect via social links below.
           </p>
           <div className="flex flex-wrap justify-center gap-2">
-            {portfolioData.contact.socials.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                target={social.href.startsWith("http") ? "_blank" : undefined}
-                rel={social.href.startsWith("http") ? "noreferrer" : undefined}
-                className="rounded-full border px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-              >
-                {social.label}
-              </a>
-            ))}
+            {portfolioData.contact.socials.map((social) => {
+              const config = socialConfig[social.label];
+              return (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target={social.href.startsWith("http") ? "_blank" : undefined}
+                  rel={social.href.startsWith("http") ? "noreferrer" : undefined}
+                  className="group flex size-10 items-center justify-center rounded-full border text-muted-foreground transition-all duration-200"
+                  onMouseEnter={(e) => {
+                    if (config?.color) {
+                      e.currentTarget.style.color = "#ffffff";
+                      e.currentTarget.style.borderColor = config.color;
+                      e.currentTarget.style.backgroundColor = config.color;
+                      if (config.isImage) {
+                        const img = e.currentTarget.querySelector("img");
+                        if (img) img.style.filter = "brightness(0) invert(1)";
+                      }
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = "";
+                    e.currentTarget.style.borderColor = "";
+                    e.currentTarget.style.backgroundColor = "";
+                    if (config?.isImage) {
+                      const img = e.currentTarget.querySelector("img");
+                      if (img) img.style.filter = "";
+                    }
+                  }}
+                >
+                  {config?.icon}
+                </a>
+              );
+            })}
           </div>
-          <p className="text-sm text-muted-foreground">
-            Email: {portfolioData.contact.email}
-          </p>
-        </div>
-
-        <div className="rounded-2xl border bg-card p-5 sm:p-6">
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Name</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Your name" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email</FormLabel>
-                    <FormControl>
-                      <Input
-                        type="email"
-                        placeholder="you@example.com"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="message"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Message</FormLabel>
-                    <FormControl>
-                      <Textarea
-                        placeholder="Tell me about your project or opportunity..."
-                        className="min-h-32"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormDescription>
-                      Your message goes directly to my inbox.
-                    </FormDescription>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <Button type="submit" size="lg" className="w-full sm:w-auto">
-                Send Message
-              </Button>
-              {submitted && (
-                <p className="text-sm text-green-600 dark:text-green-400">
-                  Thank you. Your message has been prepared successfully.
-                </p>
-              )}
-            </form>
-          </Form>
         </div>
       </SectionReveal>
     </section>
