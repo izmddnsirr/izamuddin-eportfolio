@@ -19,7 +19,7 @@ export default function Education() {
         </div>
 
         <div className="relative space-y-4 pl-10 sm:pl-14 before:absolute before:top-2 before:bottom-2 before:left-5 before:w-px before:bg-border">
-          <div className="absolute top-1/2 left-5 -translate-x-1/2 -translate-y-1/2 z-10 flex size-10 items-center justify-center rounded-full bg-linear-to-br from-violet-500 to-purple-600 shadow-lg shadow-purple-500/30">
+          <div className="absolute top-1/2 left-5 -translate-x-1/2 -translate-y-1/2 z-10 flex size-10 items-center justify-center rounded-full bg-linear-to-br from-green-400 to-emerald-600 shadow-lg shadow-emerald-500/30">
             <GraduationCap className="size-4 text-white" />
           </div>
           {portfolioData.education.map((item) => (

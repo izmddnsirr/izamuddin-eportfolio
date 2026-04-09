@@ -72,7 +72,7 @@ export type CertificationItem = {
 export type AchievementItem = {
   title: string;
   description: string;
-  year: number;
+  year: number | string;
 };
 
 export type SocialLink = {
@@ -119,7 +119,7 @@ export const portfolioData = {
   } satisfies HeroData,
   about: {
     profileImage: "/profile-placeholder.svg",
-    bio: "I am a Software Engineering student at Universiti Tun Hussein Onn Malaysia, passionate about crafting web and mobile applications that solve real-world problems. Skilled in building scalable, user-centric applications and awarded Bronze Medal at MIIX 2024 for IoT innovation.",
+    bio: "I am a Software Engineering student at Universiti Tun Hussein Onn Malaysia, passionate about building web and mobile applications that solve real-world problems. I enjoy working across the full stack and have a growing interest in cloud technologies. I leverage AI tools like Claude Code and Codex to build smarter and faster.",
     stats: [
       { label: "CGPA", value: "3.71" },
       { label: "Projects", value: "2+" },
@@ -246,6 +246,11 @@ export const portfolioData = {
     },
   ] satisfies CertificationItem[],
   achievements: [
+    {
+      title: "Dean's List Award – Universiti Tun Hussein Onn Malaysia",
+      description: "Four consecutive semesters of academic excellence in Software Engineering.",
+      year: "2024 - 2026",
+    },
     {
       title: "Bronze Medalist – Malaysia Invention & Innovation Expo (MIIX) 2024",
       description: "Awarded Bronze Medal (Intermediate Innovator) for \"WindowSense: A Smart Convenience Window\"",
