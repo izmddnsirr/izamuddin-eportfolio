@@ -123,7 +123,7 @@ export const portfolioData = {
     stats: [
       { label: "CGPA", value: "3.71" },
       { label: "Projects", value: "2+" },
-      { label: "Certifications", value: "3" },
+      { label: "Certifications", value: "2" },
       { label: "Award", value: "MIIX 2024" },
     ],
   } satisfies AboutData,
