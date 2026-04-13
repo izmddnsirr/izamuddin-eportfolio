@@ -40,18 +40,18 @@ export default function About() {
             />
           </div>
 
-          <Card className="h-full">
+          <Card className="h-full py-0">
             <CardContent className="flex h-full flex-col justify-between p-6">
-              <p className="leading-relaxed text-muted-foreground">
+              <p className="text-lg leading-relaxed text-muted-foreground text-justify">
                 {portfolioData.about.bio}
               </p>
               <div className="grid gap-3 sm:grid-cols-2">
                 {portfolioData.about.stats.map((stat) => (
                   <div
                     key={stat.label}
-                    className="rounded-xl border bg-muted/40 p-4"
+                    className="rounded-lg border bg-muted/40 p-4"
                   >
-                    <p className="text-2xl font-semibold tracking-tight">
+                    <p className="font-(family-name:--font-jetbrains-mono) text-2xl font-bold tracking-tight">
                       {stat.value}
                     </p>
                     <p className="text-sm text-muted-foreground">

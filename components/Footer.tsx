@@ -28,6 +28,9 @@ export default function Footer() {
           <a href="https://aws.amazon.com/amplify" target="_blank" rel="noreferrer" title="AWS Amplify" className={iconClass}>
             <Image src={`${BASE}/aws-aws-amplify/default.svg`} alt="AWS Amplify" width={20} height={20} style={{ width: 20, height: 20 }} unoptimized />
           </a>
+          <a href="https://vercel.com" target="_blank" rel="noreferrer" title="Vercel" className={iconClass}>
+            <Image src={`${BASE}/vercel/default.svg`} alt="Vercel" width={16} height={16} style={{ width: 16, height: 16 }} className="brightness-0 dark:invert" unoptimized />
+          </a>
         </div>
       </div>
     </footer>

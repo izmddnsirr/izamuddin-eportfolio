@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { JetBrains_Mono, Poppins } from "next/font/google";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { portfolioData } from "@/data/portfolio";
 import "./globals.css";
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+});
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -48,7 +53,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${poppins.variable} h-full antialiased`}
+      className={`${poppins.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-background text-foreground">
         <ThemeProvider
