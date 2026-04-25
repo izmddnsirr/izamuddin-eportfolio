@@ -25,10 +25,10 @@ export default function Education() {
           {portfolioData.education.map((item) => (
             <Card key={`${item.institution}-${item.degree}`} className="relative">
               <span className="absolute top-6 -left-[1.07rem] size-3 rounded-full border bg-background" />
-              <CardContent className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 px-5 py-3">
+              <CardContent className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 px-5 py-2">
                 <div className="flex items-center gap-4">
-                  <div className="flex w-12 sm:w-15 shrink-0 items-center justify-center">
-                    <Image src="/uthm.png" alt="UTHM" width={60} height={60} className="object-contain w-10 h-10 sm:w-15 sm:h-15" />
+                  <div className="flex shrink-0 items-center justify-center">
+                    <Image src="/uthm.png" alt="UTHM" width={52} height={52} className="object-contain w-12 h-12 sm:w-14 sm:h-14" />
                   </div>
                   <div className="w-px self-stretch bg-border" />
                   <div>

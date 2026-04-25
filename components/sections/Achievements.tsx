@@ -24,7 +24,7 @@ export default function Achievements() {
           {portfolioData.achievements.map((item) => (
             <Card key={item.title} className="relative">
               <span className="absolute top-6 -left-[1.07rem] size-3 rounded-full border bg-background" />
-              <CardContent className="flex flex-wrap items-start justify-between gap-2 sm:gap-4 px-5 py-3">
+              <CardContent className="flex flex-wrap items-start justify-between gap-2 sm:gap-4 px-5 py-2">
                 <div>
                   <h3 className="text-lg font-semibold">{item.title}</h3>
                   <p className="text-sm text-muted-foreground">{item.description}</p>

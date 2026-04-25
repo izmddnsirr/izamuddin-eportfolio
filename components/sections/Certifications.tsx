@@ -26,16 +26,16 @@ export default function Certifications() {
           {portfolioData.certifications.map((cert) => (
             <Card key={cert.name} className="relative">
               <span className="absolute top-6 -left-[1.07rem] size-3 rounded-full border bg-background" />
-              <CardContent className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 px-5 py-3">
+              <CardContent className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 px-5 py-2">
                 <div className="flex items-center gap-4">
                   {cert.issuerLogo && (
-                    <div className="flex h-12 w-12 sm:h-15 sm:w-15 shrink-0 items-center justify-center">
+                    <div className="flex h-9 w-9 sm:h-11 sm:w-11 shrink-0 items-center justify-center">
                       <Image
                         src={`https://thesvg.org/icons/${cert.issuerLogo}/default.svg`}
                         alt={cert.issuer}
-                        width={cert.logoSize ?? 60}
-                        height={cert.logoSize ?? 60}
-                        style={{ width: cert.logoSize ?? 60, height: cert.logoSize ?? 60 }}
+                        width={cert.logoSize ?? 44}
+                        height={cert.logoSize ?? 44}
+                        style={{ width: cert.logoSize ?? 44, height: cert.logoSize ?? 44 }}
                         className="object-contain"
                         unoptimized
                       />

@@ -119,11 +119,11 @@ export const portfolioData = {
   } satisfies HeroData,
   about: {
     profileImage: "/profile-placeholder.svg",
-    bio: "I am a Software Engineering student at Universiti Tun Hussein Onn Malaysia, passionate about building web and mobile applications that solve real-world problems. I enjoy working across the full stack and have a growing interest in cloud technologies. I leverage AI tools like Claude Code and Codex to build smarter and faster.",
+    bio: "I’m a Software Engineering student at Universiti Tun Hussein Onn Malaysia with a strong passion for developing web and mobile applications that address real-world challenges. I enjoy working across the full stack and am increasingly interested in cloud technologies. I also utilize AI tools like Claude Code and Codex to enhance my productivity and build solutions more efficiently.",
     stats: [
       { label: "CGPA", value: "3.71" },
       { label: "Projects", value: "2+" },
-      { label: "Certifications", value: "2" },
+      { label: "Certifications", value: "3" },
       { label: "Award", value: "MIIX 2024" },
     ],
   } satisfies AboutData,
@@ -230,6 +230,13 @@ export const portfolioData = {
   ] satisfies EducationItem[],
   certifications: [
     {
+      name: "AWS AI Practitioner Challenge",
+      issuer: "Udacity",
+      issuerLogo: "aws",
+      date: "Apr 2026",
+      status: "In Progress",
+    },
+    {
       name: "Google IT Automation Professional Certificate",
       issuer: "Coursera",
       issuerLogo: "google",
@@ -263,7 +270,7 @@ export const portfolioData = {
       { label: "GitHub", href: "https://github.com/izmddnsirr" },
       { label: "LinkedIn", href: "https://www.linkedin.com/in/izamuddinnasir" },
       { label: "Email", href: "mailto:izamuddinasir@gmail.com" },
-      { label: "Threads", href: "https://www.threads.net/@izamuddinnasir" },
+      { label: "Threads", href: "https://www.threads.net/@izmddnsirr" },
     ],
   } satisfies ContactData,
 } as const;

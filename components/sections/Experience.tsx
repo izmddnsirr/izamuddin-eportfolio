@@ -29,7 +29,7 @@ export default function Experience() {
           {portfolioData.experience.map((job) => (
             <Card key={`${job.company}-${job.role}`} className="relative">
               <span className="absolute top-6 -left-[1.07rem] size-3 rounded-full border bg-background" />
-              <CardContent className="space-y-3 px-5 py-3">
+              <CardContent className="space-y-3 px-5 py-2">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="flex items-center gap-4">
                     {companyLogos[job.company] && (
