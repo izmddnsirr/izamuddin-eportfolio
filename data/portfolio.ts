@@ -108,7 +108,7 @@ export const portfolioData = {
     role: "Software Engineer",
     tagline: "Building scalable, user-centric web and mobile applications.",
     summary:
-      "Hands-on experience in full-stack development using Next.js, React Native, and Supabase. Winner at VIBE 2026 and Bronze Medalist at MIIX 2024. Seeking internship from August 2026.",
+      "Hands-on experience in full-stack development using Next.js, React Native with Expo, and Supabase. Winner at VIBE 2026 and Bronze Medalist at MIIX 2024. Seeking internship from August 2026.",
     ctaPrimary: {
       label: "View Projects",
       targetId: "projects",
