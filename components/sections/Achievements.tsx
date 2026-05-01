@@ -4,6 +4,8 @@ import SectionReveal from "@/components/SectionReveal";
 import { Card, CardContent } from "@/components/ui/card";
 import { portfolioData } from "@/data/portfolio";
 
+const visibleAchievements = portfolioData.achievements.filter((item) => !item.hidden);
+
 export default function Achievements() {
   return (
     <section id="achievements" className="scroll-mt-24 py-16 sm:py-20">
@@ -21,15 +23,15 @@ export default function Achievements() {
           <div className="absolute top-1/2 left-5 -translate-x-1/2 -translate-y-1/2 z-10 flex size-10 items-center justify-center rounded-full bg-linear-to-br from-yellow-400 to-orange-500 shadow-lg shadow-orange-500/30">
             <Trophy className="size-4 text-white" />
           </div>
-          {portfolioData.achievements.map((item) => (
+          {visibleAchievements.map((item) => (
             <Card key={item.title} className="relative">
               <span className="absolute top-6 -left-[1.07rem] size-3 rounded-full border bg-background" />
-              <CardContent className="flex flex-wrap items-start justify-between gap-2 sm:gap-4 px-5 py-2">
-                <div>
+              <CardContent className="grid grid-cols-1 gap-2 px-5 py-2 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-4">
+                <div className="min-w-0">
                   <h3 className="text-lg font-semibold">{item.title}</h3>
                   <p className="text-sm text-muted-foreground">{item.description}</p>
                 </div>
-                <span className="shrink-0 text-sm text-muted-foreground">{item.year}</span>
+                <span className="text-sm text-muted-foreground sm:pt-0.5">{item.year}</span>
               </CardContent>
             </Card>
           ))}

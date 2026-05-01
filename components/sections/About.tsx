@@ -51,7 +51,7 @@ export default function About() {
                     key={stat.label}
                     className="rounded-lg border bg-muted/40 p-4"
                   >
-                    <p className="font-(family-name:--font-jetbrains-mono) text-2xl font-bold tracking-tight">
+                    <p className="font-(family-name:--font-jetbrains-mono) text-xl leading-tight font-bold tracking-tight sm:text-2xl">
                       {stat.value}
                     </p>
                     <p className="text-sm text-muted-foreground">

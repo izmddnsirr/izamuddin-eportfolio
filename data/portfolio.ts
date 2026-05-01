@@ -73,6 +73,7 @@ export type AchievementItem = {
   title: string;
   description: string;
   year: number | string;
+  hidden?: boolean;
 };
 
 export type SocialLink = {
@@ -107,7 +108,7 @@ export const portfolioData = {
     role: "Software Engineer",
     tagline: "Building scalable, user-centric web and mobile applications.",
     summary:
-      "Hands-on experience in full-stack development using Next.js, React Native, and Supabase. Bronze Medalist at MIIX 2024. Seeking internship from August 2026.",
+      "Hands-on experience in full-stack development using Next.js, React Native, and Supabase. Winner at VIBE 2026 and Bronze Medalist at MIIX 2024. Seeking internship from August 2026.",
     ctaPrimary: {
       label: "View Projects",
       targetId: "projects",
@@ -124,7 +125,7 @@ export const portfolioData = {
       { label: "CGPA", value: "3.71" },
       { label: "Projects", value: "2+" },
       { label: "Certifications", value: "3" },
-      { label: "Award", value: "MIIX 2024" },
+      { label: "Awards", value: "VIBE 2026 + MIIX 2024" },
     ],
   } satisfies AboutData,
   skills: [
@@ -253,6 +254,17 @@ export const portfolioData = {
     },
   ] satisfies CertificationItem[],
   achievements: [
+    {
+      title: "Gold Medalist – International Research and Innovation Symposium Competition (RISE) 2026",
+      description: "Awarded Gold Medal for an innovative product showcase at RISE 2026, an IHL innovation exhibition hosted by Universiti Tun Hussein Onn Malaysia.",
+      year: 2026,
+      hidden: true,
+    },
+    {
+      title: "Winner – Visionary Innovation in Bedrock Exploration (VIBE) Hackathon 2026",
+      description: "Won a GenAI and Prompt Engineering hackathon with AWS Bedrock, building AI solutions to enhance productivity and campus life.",
+      year: 2026,
+    },
     {
       title: "Dean's List Award – Universiti Tun Hussein Onn Malaysia",
       description: "Four consecutive semesters of academic excellence in Software Engineering.",
