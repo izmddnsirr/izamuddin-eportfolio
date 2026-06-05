@@ -41,7 +41,7 @@ export default function About() {
           </div>
 
           <Card className="h-full py-0">
-            <CardContent className="flex h-full flex-col justify-between p-6">
+            <CardContent className="flex h-full flex-col justify-between gap-6 p-6">
               <p className="text-lg leading-relaxed text-muted-foreground text-justify">
                 {portfolioData.about.bio}
               </p>

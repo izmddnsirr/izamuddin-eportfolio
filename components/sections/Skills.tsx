@@ -34,6 +34,7 @@ const techLogos = [
   // Mobile
   { node: <TechIcon slug="flutter" name="Flutter" />, title: "Flutter", href: "https://flutter.dev" },
   { node: <TechIcon slug="expo" name="Expo" invertInDark />, title: "Expo", href: "https://expo.dev" },
+  { node: <TechIcon slug="swift" name="SwiftUI" />, title: "SwiftUI", href: "https://developer.apple.com/xcode/swiftui/" },
   // Database
   { node: <TechIcon slug="mysql" name="MySQL" invertInLight />, title: "MySQL", href: "https://www.mysql.com" },
   { node: <TechIcon slug="postgresql" name="PostgreSQL" />, title: "PostgreSQL", href: "https://www.postgresql.org" },
@@ -44,6 +45,8 @@ const techLogos = [
   // AI
   { node: <TechIcon slug="openai" name="ChatGPT" invertInLight />, title: "ChatGPT", href: "https://chatgpt.com" },
   { node: <TechIcon slug="claude" name="Claude" />, title: "Claude", href: "https://claude.ai" },
+  // Cloud
+  { node: <TechIcon slug="aws" name="AWS" />, title: "AWS", href: "https://aws.amazon.com" },
   // Tools
   { node: <TechIcon slug="visual-studio-code" name="VS Code" />, title: "VS Code", href: "https://code.visualstudio.com" },
   { node: <TechIcon slug="git" name="Git" />, title: "Git", href: "https://git-scm.com" },
