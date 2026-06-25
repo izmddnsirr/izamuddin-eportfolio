@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Poppins } from "next/font/google";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { portfolioData } from "@/data/portfolio";
 import "./globals.css";
@@ -62,11 +60,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex min-h-screen flex-col">
-            <Navbar />
-            <div className="flex-1">{children}</div>
-            <Footer />
-          </div>
+          {children}
         </ThemeProvider>
       </body>
     </html>
